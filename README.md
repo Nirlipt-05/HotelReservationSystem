@@ -1,9 +1,6 @@
 # Hotel Reservation System 🏨🛎️🛏️
 This is a ***CLI based project*** that will help in maintaining the reservation of a hotel.
 The project is a ***basic implementation of JDBC*** in java. Here, various other concepts of java are used along with exception handeling and multithreading.
-
-## Target Audience:
-
 This system is targeting the personnel like **receptionist**. They will be having this system to carry out the below 5 functionality i.e.:-
 
 1. New reservation
@@ -12,9 +9,7 @@ This system is targeting the personnel like **receptionist**. They will be havin
 4. Update Reservation
 5. Delete Reservation
 
-## User Interface
-
-Now the user will have a main menu where in he/she will be having the 6 options to select:
+The user will have a main menu where in he/she will be having the 6 options to select:
 
 1. New Reservation
 2. Check Reservation
@@ -43,7 +38,7 @@ should be `not null`, so as these would be the mandatory fields that needs to be
 
 *reservation_date* will be filled automatically by itself hence it is `default`.
 
-## Various methods used-
+## ***Methods:***
 Our program is having various methods and implementations:
 1. first of all we will be having a `main()` method that will be providing the Menu to the user so that they could carry out therr functionalities,
 2. `reserveRoom()` will provide functionality to **reserve a room** by taking the input of *guest name, room number and contact number* from the user.
