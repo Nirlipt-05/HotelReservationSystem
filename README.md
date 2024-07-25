@@ -1,4 +1,4 @@
-# Hotel Reservation System
+# Hotel Reservation System 🏨🛎️🛏️
 This is a ***CLI based project*** that will help in maintaining the reservation of a hotel.
 The project is a ***basic implementation of JDBC*** in java. Here, various other concepts of java are used along with exception handeling and multithreading.
 
