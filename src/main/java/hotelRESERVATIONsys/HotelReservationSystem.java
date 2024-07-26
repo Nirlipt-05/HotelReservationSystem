@@ -1,3 +1,4 @@
+
 package hotelRESERVATIONsys;
 
 import java.sql.DriverManager;
@@ -134,34 +135,36 @@ public class HotelReservationSystem
 	}
 	private static void getRoomNumber(Connection connection, Scanner sc)
 	{
-		try
-		{
-			System.out.println("Enter reservation ID: ");
-			int reservationId = sc.nextInt();
-			System.out.println("Enter the guest name: ");
-			String guestName = sc.next();
-			
-			String sql= "SELECT room_number FROM reservation "+ "where reservation_id = "+reservationId +" and guest_name = ' "+ guestName + "'";
-			
-			try(Statement statement = connection.createStatement();
-					ResultSet resultSet = statement.executeQuery(sql))
-			{
-				if(resultSet.next())
-				{
-					int roomNumber = resultSet.getInt("room_number");
-					System.out.println("Room number for Reservation ID "+ reservationId +" and Guest "+ guestName + " is: "+roomNumber);
-				}
-				else
-				{
-					System.out.println("Reservation not found for the given ID and guest name.");
-				}
-			}
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
+	    try
+	    {
+	        System.out.println("Enter reservation ID: ");
+	        int reservationId = sc.nextInt();
+	        sc.nextLine(); // Consume newline left-over
+	        System.out.println("Enter the guest name: ");
+	        String guestName = sc.nextLine();
+	        
+	        String sql = "SELECT room_number FROM reservation WHERE reservation_id = " + reservationId + " AND guest_name = '" + guestName + "'";
+	        
+	        try (Statement statement = connection.createStatement();
+	             ResultSet resultSet = statement.executeQuery(sql))
+	        {
+	            if (resultSet.next())
+	            {
+	                int roomNumber = resultSet.getInt("room_number");
+	                System.out.println("Room number for Reservation ID " + reservationId + " and Guest " + guestName + " is: " + roomNumber);
+	            }
+	            else
+	            {
+	                System.out.println("Reservation not found for the given ID and guest name.");
+	            }
+	        }
+	    }
+	    catch (SQLException e)
+	    {
+	        e.printStackTrace();
+	    }
 	}
+
 	
 	private static void updateReservation(Connection connection, Scanner sc)
 	{
