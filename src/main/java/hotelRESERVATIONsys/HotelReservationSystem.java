@@ -119,17 +119,17 @@ public class HotelReservationSystem
 			while(resultSet.next())//resultSet.next() returns boolean type of data, it will return true till it has data in it, else it would return false.
 			{
 				// the data written within () are the SQL table's field name
-				int reservationId = resultSet.getInt("reservaton_id");
+				int reservationId = resultSet.getInt("reservation_id");
 				String guestName = resultSet. getString("guest_name");
 				int roomNumber = resultSet.getInt("room_number");
 				String contactNumber = resultSet.getString("contact_number");
-				String reservationDate =  resultSet.getTimestamp("resrvation_date").toString();
+				String reservationDate =  resultSet.getTimestamp("reservation_date").toString();
 				
 				//Format and display the reservation data in a table-like format
-				System.out.printf("| %-14d | %-15s | %-13d | %-20s | %-19s |\n",
+				System.out.printf("| %-14d | %-20s | %-15d | %-22s | %-23s |\n",
 						reservationId, guestName, roomNumber, contactNumber, reservationDate );
 			}
-			System.out.println("+----------------+----------------------+-----------------+------------------------+--------------------------+");
+			System.out.println("+----------------+----------------------+-----------------+------------------------+-------------------------+");
 		}
 	}
 	private static void getRoomNumber(Connection connection, Scanner sc)
@@ -141,7 +141,7 @@ public class HotelReservationSystem
 			System.out.println("Enter the guest name: ");
 			String guestName = sc.next();
 			
-			String sql= "SELECT room_number FROM reservationñ "+ "where reservation_id = "+reservationId +" and guest_name = ' "+ guestName + "'";
+			String sql= "SELECT room_number FROM reservation "+ "where reservation_id = "+reservationId +" and guest_name = ' "+ guestName + "'";
 			
 			try(Statement statement = connection.createStatement();
 					ResultSet resultSet = statement.executeQuery(sql))
@@ -260,10 +260,11 @@ public class HotelReservationSystem
 	        int i = 5;
 	        while(i!=0)//just for loading style....
 	        {
+	        	System.out.print("👋🏻");
 	            Thread.sleep(1000);
 	            i--;
 	        }
 	        System.out.println();
-	        System.out.println("ThankYou For Using Hotel Reservation System!!!");
+	        System.out.println("ThankYou For Using Hotel Reservation System 🙏🏻");
 	    }
 }
